@@ -1,0 +1,25 @@
+csharp-course-metigator/
+├── README.md
+├── .gitignore
+├── Task01-ProjectSetupVariables/
+├── Task02-BooleanLogicArrays/
+├── Task03-ExpressionsTypeConversion/
+├── Task04-OOPFundamentals/
+├── Task05-DelegatesEvents/
+├── Task06-OperatorOverloadingFinalizer/
+├── Task07-NestedTypesDebugging/
+├── Task08-StructEnum/
+├── Task09-InheritanceInterfaces/
+├── Task10-GenericsGenericDelegates/
+├── Task11-ExceptionHandling/
+├── Task12-EnumeratorsIterators/
+├── Task13-XmlDocsExtensionMethods/
+├── Task14-AssembliesReflectionAttributes/
+├── Task15-CollectionsDataStructures/
+├── Task16-StreamIOFileOperations/
+├── Task17-NuGetPackages/
+├── Task18-ThreadingAsync/
+├── Task19-Serialization/
+├── Task20-YieldRecordsTopLevelNullHandling/
+├── Task21-StringsStringBuilderTuples/
+└── Capstone-LibraryManagementSystem/
