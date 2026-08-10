@@ -7,8 +7,8 @@ Each task is completed after watching its corresponding videos and lives in its 
 
 ## Progress
 
-- [ ] **Task 01** — Project Setup & Variables (#000–#003)
-- [ ] **Task 02** — Boolean Logic & Arrays (#004–#005)
+- [X] **Task 01** — Project Setup & Variables (#000–#003)
+- [X] **Task 02** — Boolean Logic & Arrays (#004–#005)
 - [ ] **Task 03** — Expressions & Type Conversion (#006–#007)
 - [ ] **Task 04** — OOP Fundamentals (#008–#012)
 - [ ] **Task 05** — Delegates & Events (#013–#014)
