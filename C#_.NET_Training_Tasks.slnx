@@ -1,7 +1,8 @@
 <Solution>
-  <Project Path="D:/Training/C#_.NET_Training_Tasks/Task1/Task1.csproj" />
-  <Project Path="D:/Training/C#_.NET_Training_Tasks/Task2/Task2.csproj" />
-  <Project Path="D:/Training/C#_.NET_Training_Tasks/Task3/Task3.csproj" Id="a002146d-e475-40f8-95e4-78534961c58b" />
-  <Project Path="Task4/Task4.csproj" Id="fbcf195e-15ab-44cd-8a2c-80dae1f5fd5d" />
-  <Project Path="Task5/Task5.csproj" Id="3907a304-90e9-4aa6-b917-e5aca97b6a15" />
+  <Project Path="Task01-ProjectSetupVariables/Task01-ProjectSetupVariables.csproj" />
+  <Project Path="Task02-BooleanLogicArrays/Task02-BooleanLogicArrays.csproj" />
+  <Project Path="Task03-ExpressionsTypeConversion/Task03-ExpressionsTypeConversion.csproj" />
+  <Project Path="Task04-OOPFundamentals/Task04-OOPFundamentals.csproj" />
+  <Project Path="Task05-DelegatesEvents/Task05-DelegatesEvents.csproj" />
+  <Project Path="Task06-OperatorOverloadingFinalizer/Task06-OperatorOverloadingFinalizer.csproj" Id="3a23128a-3643-48d0-8520-6d69261e2606" />
 </Solution>
