@@ -5,4 +5,5 @@
   <Project Path="Task04-OOPFundamentals/Task04-OOPFundamentals.csproj" />
   <Project Path="Task05-DelegatesEvents/Task05-DelegatesEvents.csproj" />
   <Project Path="Task06-OperatorOverloadingFinalizer/Task06-OperatorOverloadingFinalizer.csproj" Id="3a23128a-3643-48d0-8520-6d69261e2606" />
+  <Project Path="Task07-NestedTypes&amp;Debugging/Task07-NestedTypes&amp;Debugging.csproj" Id="dcbf9329-42f7-4515-b0f9-77c0fcf103cf" />
 </Solution>
