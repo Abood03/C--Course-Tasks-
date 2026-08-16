@@ -14,8 +14,13 @@
         c4.R=100;
         Console.WriteLine(c3.R);
         Console.WriteLine(c4.R);
+        Console.WriteLine("Enum");
         OrderStatus status = OrderStatus.Paid | OrderStatus.Shipped;
         Console.WriteLine(status);
+        if ((status & OrderStatus.Paid) == OrderStatus.Paid)
+        {
+            Console.WriteLine("Order is paid");
+        }
 
     }
     public struct Color
