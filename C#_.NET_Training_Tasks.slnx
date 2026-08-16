@@ -8,4 +8,5 @@
   <Project Path="Task07-NestedTypes&amp;Debugging/Task07-NestedTypes&amp;Debugging.csproj" Id="dcbf9329-42f7-4515-b0f9-77c0fcf103cf" />
   <Project Path="Task08-Struct&amp;Enum/Task08-Struct&amp;Enum.csproj" Id="3f3bdd47-1e20-40e2-afd9-6c53e669611b" />
   <Project Path="Task09-InheritanceInterfaces/Task09-InheritanceInterfaces.csproj" Id="ddb55935-b1ff-45cd-94cc-858434578250" />
+  <Project Path="Task10-GenericsGenericDelegates/Task10-GenericsGenericDelegates.csproj" Id="2acb76cd-ece1-4532-a9d1-dc4d24b53fb1" />
 </Solution>
