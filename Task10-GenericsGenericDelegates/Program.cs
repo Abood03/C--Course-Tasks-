@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create repository and add employee
+        // Create repository and add employees
         Repository<Employee> repo = new Repository<Employee>();
         repo.Add(new Employee(1, "abood"));
         repo.Add(new Employee(2, "zaid"));
