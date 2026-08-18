@@ -12,13 +12,16 @@ public class Repository<T> where T : IEntity
 {
     public List<T> Filter(Func<T, bool> condition)
     {
-        List<T> item = new List<T>();
+        List<T> result = new List<T>();
         foreach (var i in item)
         {
-            
+            if (condition(i))
+            {
+                result.Add(i);
+            }
         }
 
-        return item;
+        return result;
     }
     List<T> item = new List<T>();
 
@@ -48,8 +51,8 @@ public class Repository<T> where T : IEntity
 
 public class Employee : IEntity
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public int Id { get;  set; }
+    public string Name { get;  set; }
 
     public Employee(int id, string name)
     {
