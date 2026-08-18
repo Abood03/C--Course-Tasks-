@@ -13,7 +13,8 @@
             Console.Write($"Enter Grade {i+1}:");
             var grade = Console.ReadLine();
             int.TryParse( grade, out Grade[i] );
-            avg += Grade[i];
+            if (Grade[i]>=0)
+                avg += Grade[i];
             if (Grade[i] >= 0) { 
                 if (Grade[i] > max)
                 {
