@@ -10,6 +10,16 @@ class Program
 
 public class Repository<T> where T : IEntity
 {
+    public List<T> Filter(Func<T, bool> condition)
+    {
+        List<T> item = new List<T>();
+        foreach (var i in item)
+        {
+            
+        }
+
+        return item;
+    }
     List<T> item = new List<T>();
 
     public void Add(T entity)
