@@ -1,9 +1,4 @@
 <Solution>
-  <Folder Name="/Task14-AssembliesReflectionAttributes/">
-    <Project Path="App/App.csproj" Id="a023f3fb-1b76-4693-a0a6-2bc831ef57fa" />
-    <Project Path="Core/Core.csproj" Id="0e3a2654-df83-439a-ace5-62ab12a80e23" />
-    <Project Path="Services/Services.csproj" Id="901fbe44-19dc-451f-bb67-170e45adfef6" />
-  </Folder>
   <Project Path="Task01-ProjectSetupVariables/Task01-ProjectSetupVariables.csproj" />
   <Project Path="Task02-BooleanLogicArrays/Task02-BooleanLogicArrays.csproj" />
   <Project Path="Task03-ExpressionsTypeConversion/Task03-ExpressionsTypeConversion.csproj" />
@@ -17,4 +12,5 @@
   <Project Path="Task11-ExceptionHandling/Task11-ExceptionHandling.csproj" Id="ffc762d7-dba2-4509-8a16-c7eda72eb439" />
   <Project Path="Task12-EnumeratorsIterators/Task12-EnumeratorsIterators.csproj" Id="044e7195-068c-4f55-b164-869df8f7de34" />
   <Project Path="Task13-XmlDocsExtensionMethods/Task13-XmlDocsExtensionMethods.csproj" Id="225839c7-74fc-4cf1-954e-edf9b33611ab" />
+  <Project Path="Task14-AssembliesReflectionAttributes/Task14-AssembliesReflectionAttributes.csproj" />
 </Solution>
