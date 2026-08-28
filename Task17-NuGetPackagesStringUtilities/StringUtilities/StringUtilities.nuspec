@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<package>
+  <metadata>
+    <id>StringUtilities</id>
+    <version>1.0.0</version>
+    <authors>Abood</authors>
+    <description>Simple string utilities package for C# training.</description>
+  </metadata>
+
+  <files>
+    <file src="bin\Release\net10.0\StringUtilities.dll"
+          target="lib\net10.0" />
+  </files>
+</package>
