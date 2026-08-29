@@ -23,4 +23,7 @@
   <Project Path="Task13-XmlDocsExtensionMethods/Task13-XmlDocsExtensionMethods.csproj" Id="225839c7-74fc-4cf1-954e-edf9b33611ab" />
   <Project Path="Task15-CollectionsDataStructures/Task15-CollectionsDataStructures.csproj" Id="c4a4044c-dd18-4ebd-8716-fa90e037538d" />
   <Project Path="Task16-StreamIOFileOperations/Task16-StreamIOFileOperations.csproj" Id="850bec87-361c-409b-83ba-f80d9fd0e84b" />
+  <Project Path="Task18-ThreadingAsync/Task18-ThreadingAsync.csproj" Id="3899343c-1fa0-4113-b4c5-10ff29e24b3e" />
+  <Project Path="Task19-Serialization/Task19-Serialization.csproj" Id="9bc054a9-195a-47ea-acf3-67782fb1b157" />
+  <Project Path="Task20-YieldRecordsTopLevelNullHandling/Task20-YieldRecordsTopLevelNullHandling.csproj" Id="bd5c33d5-6df2-48cd-96a9-831f4c4c9d1e" />
 </Solution>

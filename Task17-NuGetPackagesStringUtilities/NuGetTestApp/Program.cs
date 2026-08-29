@@ -7,4 +7,4 @@ class Program
         Console.WriteLine(StringHelper.AddHello("Abood"));
         Console.WriteLine(StringHelper.IsLong("Hello World From C#"));
     }
-}
+} 
