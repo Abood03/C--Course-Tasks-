@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
-    internal class Person
+    public abstract class Person
     {
+        int Id { get; set; }
+        string Name { get; set; }
     }
 }

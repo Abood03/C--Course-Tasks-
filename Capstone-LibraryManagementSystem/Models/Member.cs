@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
-    internal class Member
+    public class Member:Person
     {
+
     }
 }
