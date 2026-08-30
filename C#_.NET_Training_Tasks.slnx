@@ -26,4 +26,5 @@
   <Project Path="Task18-ThreadingAsync/Task18-ThreadingAsync.csproj" Id="3899343c-1fa0-4113-b4c5-10ff29e24b3e" />
   <Project Path="Task19-Serialization/Task19-Serialization.csproj" Id="9bc054a9-195a-47ea-acf3-67782fb1b157" />
   <Project Path="Task20-YieldRecordsTopLevelNullHandling/Task20-YieldRecordsTopLevelNullHandling.csproj" Id="bd5c33d5-6df2-48cd-96a9-831f4c4c9d1e" />
+  <Project Path="Task21-StringsStringBuilderTuples/Task21-StringsStringBuilderTuples.csproj" Id="76edbd6e-aca7-4842-aef2-0a8e7fda7807" />
 </Solution>
