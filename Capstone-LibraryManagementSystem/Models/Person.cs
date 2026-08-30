@@ -6,7 +6,18 @@ namespace Capstone_LibraryManagementSystem.Models
 {
     public abstract class Person
     {
+
         int Id { get; set; }
         string Name { get; set; }
+        protected Person(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public override string? ToString()
+        {
+            return base.ToString();
+        }
     }
 }
