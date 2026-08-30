@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Capstone_LibraryManagementSystem.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
-    public class Book
+    public class Book:IBorrowable
     {
 
         public int Id { get; set; }
@@ -24,6 +25,20 @@ namespace Capstone_LibraryManagementSystem.Models
             return $"Id: {Id}, Title: {Title}, Author: {Author}, Status: {status}";
         }
 
-    }
+        public void Borrow()
+        {
+            if (!IsBorrowed)
+            {
+                IsBorrowed = true;
+            }
+        }
 
+        public void Return()
+        {
+            if (IsBorrowed)
+            {
+                IsBorrowed = false;
+            }
+        }
+    }
 }

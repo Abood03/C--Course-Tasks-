@@ -1,23 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Capstone_LibraryManagementSystem.Models
 {
     public abstract class Person
     {
 
-        int Id { get; set; }
-        string Name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         protected Person(int id, string name)
         {
             Id = id;
             Name = name;
         }
 
-        public override string? ToString()
+        public override string ToString()
         {
-            return base.ToString();
+            return $"Id is :{Id}, Name is :{Name}";
         }
     }
 }

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Capstone_LibraryManagementSystem.Interfaces
 {
-    internal interface ISearchable
+    public interface ISearchable<T>
     {
+        List<T> Search(string query);
+        
     }
 }
