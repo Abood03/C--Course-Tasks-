@@ -3,9 +3,6 @@
 
 namespace Capstone_LibraryManagementSystem.Models
 {
-    /// <summary>
-    /// Defines shared information for people in the library system.
-    /// </summary>
     public abstract class Person
     {
 
