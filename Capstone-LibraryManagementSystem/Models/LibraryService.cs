@@ -1,4 +1,5 @@
-﻿using Capstone_LibraryManagementSystem.Interfaces;
+﻿using Capstone_LibraryManagementSystem.Exceptions;
+using Capstone_LibraryManagementSystem.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,18 +44,16 @@ namespace Capstone_LibraryManagementSystem.Models
             Member member = members.Find(m => m.Id == memberId);
             if (book == null)
             {
-                Console.WriteLine("Book not found");
-                return;
+                throw new LibraryException("Book not found");
+
             }
             if (member == null)
             {
-                Console.WriteLine("Member not found");
-                return;
+                throw new LibraryException("Member not found");
             }
             if (book.IsBorrowed)
             {
-                Console.WriteLine("Book is already borrowed");
-                return;
+                throw new LibraryException("Book is already borrowed");
             }
             book.Borrow();
             member.BorrowedBooks.Add(book);
@@ -81,14 +80,12 @@ namespace Capstone_LibraryManagementSystem.Models
 
             if (!book.IsBorrowed)
             {
-                Console.WriteLine("Book is not borrowed");
-                return;
+                throw new LibraryException("Book is not borrowed");
             }
 
             if (!member.BorrowedBooks.Contains(book))
             {
-                Console.WriteLine("This member did not borrow this book");
-                return;
+                throw new LibraryException("This member did not borrow this book");
             }
 
             book.Return();
