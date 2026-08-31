@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
-    /// <summary>
-    /// Manages books, members, borrowing, searching, and data persistence.
-    /// </summary>
     public class LibraryService : ISearchable<Book>
     {
         private List<Book> books = new List<Book>();
