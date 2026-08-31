@@ -22,7 +22,8 @@ namespace Capstone_LibraryManagementSystem.Models
             }
             foreach (Book book in books)
             {
-                if (book.Title.Contains(query, StringComparison.OrdinalIgnoreCase)||book.Author.Contains(query, StringComparison.OrdinalIgnoreCase))
+                if (book.Title.Contains(query, StringComparison.OrdinalIgnoreCase)||
+                    book.Author.Contains(query, StringComparison.OrdinalIgnoreCase))
                 {
                     results.Add(book);
                 }
