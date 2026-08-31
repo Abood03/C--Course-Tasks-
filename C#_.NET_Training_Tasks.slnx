@@ -8,6 +8,7 @@
     <Project Path="Task17-NuGetPackagesStringUtilities/NuGetTestApp/NuGetTestApp.csproj" Id="dc53ed0e-ce06-493c-8f71-582d772ffe6d" />
     <Project Path="Task17-NuGetPackagesStringUtilities/StringUtilities/StringUtilities.csproj" Id="57c4b075-7e5b-4f6c-84ef-ed9715ead7d0" />
   </Folder>
+  <Project Path="Capstone-LibraryManagementSystem/Capstone-LibraryManagementSystem.csproj" Id="93b558e8-c942-4bb1-8bc7-a61e929459c0" />
   <Project Path="Task01-ProjectSetupVariables/Task01-ProjectSetupVariables.csproj" />
   <Project Path="Task02-BooleanLogicArrays/Task02-BooleanLogicArrays.csproj" />
   <Project Path="Task03-ExpressionsTypeConversion/Task03-ExpressionsTypeConversion.csproj" />
