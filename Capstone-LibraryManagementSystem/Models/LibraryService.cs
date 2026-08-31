@@ -15,16 +15,19 @@ namespace Capstone_LibraryManagementSystem.Models
 
         public event Action<Book, Member>? OnBookBorrowed;
 
+        [AuditLog("Adds a new book")]
         public void AddBook(Book book)
         {
             books.Add(book);
         }
 
+        [AuditLog("Adds a new member")]
         public void AddMember(Member member)
         {
             members.Add(member);
         }
 
+        [AuditLog("Searches for books")]
         public List<Book> Search(string query)
         {
             List<Book> results = new List<Book>();
@@ -45,6 +48,7 @@ namespace Capstone_LibraryManagementSystem.Models
             return results;
         }
 
+        [AuditLog("Borrows a book")]
         public void BorrowBook(int bookId, int memberId)
         {
             Book? book = books.Find(b => b.Id == bookId);
@@ -62,7 +66,8 @@ namespace Capstone_LibraryManagementSystem.Models
 
             if (book.IsBorrowed)
             {
-                throw new LibraryException("Book is already borrowed");
+                throw new LibraryException(
+                    "Book is already borrowed");
             }
 
             book.Borrow();
@@ -70,9 +75,11 @@ namespace Capstone_LibraryManagementSystem.Models
 
             OnBookBorrowed?.Invoke(book, member);
 
-            Console.WriteLine($"{member.Name} borrowed {book.Title}");
+            Console.WriteLine(
+                $"{member.Name} borrowed {book.Title}");
         }
 
+        [AuditLog("Returns a borrowed book")]
         public void ReturnBook(int bookId, int memberId)
         {
             Book? book = books.Find(b => b.Id == bookId);
@@ -90,7 +97,8 @@ namespace Capstone_LibraryManagementSystem.Models
 
             if (!book.IsBorrowed)
             {
-                throw new LibraryException("Book is not borrowed");
+                throw new LibraryException(
+                    "Book is not borrowed");
             }
 
             if (!member.BorrowedBooks.Contains(book))
@@ -102,9 +110,11 @@ namespace Capstone_LibraryManagementSystem.Models
             book.Return();
             member.BorrowedBooks.Remove(book);
 
-            Console.WriteLine($"{member.Name} returned {book.Title}");
+            Console.WriteLine(
+                $"{member.Name} returned {book.Title}");
         }
 
+        [AuditLog("Saves library data to JSON")]
         public async Task SaveDataAsync(string filePath)
         {
             LibraryData data = new LibraryData
@@ -113,15 +123,19 @@ namespace Capstone_LibraryManagementSystem.Models
                 Members = members
             };
 
-            JsonSerializerOptions options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
+            JsonSerializerOptions options =
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
 
-            string json = JsonSerializer.Serialize(data, options);
+            string json =
+                JsonSerializer.Serialize(data, options);
 
             await File.WriteAllTextAsync(filePath, json);
         }
+
+        [AuditLog("Loads library data from JSON")]
         public async Task LoadDataAsync(string filePath)
         {
             if (!File.Exists(filePath))
@@ -129,28 +143,31 @@ namespace Capstone_LibraryManagementSystem.Models
                 return;
             }
 
-            string json = await File.ReadAllTextAsync(filePath);
+            string json =
+                await File.ReadAllTextAsync(filePath);
 
             LibraryData? data =
                 JsonSerializer.Deserialize<LibraryData>(json);
 
             if (data == null)
             {
-                throw new LibraryException("Could not load library data");
+                throw new LibraryException(
+                    "Could not load library data");
             }
 
             books = data.Books ?? new List<Book>();
             members = data.Members ?? new List<Member>();
 
-            // Reconnect borrowed books with the main books list
             foreach (Member member in members)
             {
                 List<Book> restoredBooks = new List<Book>();
 
-                foreach (Book borrowedBook in member.BorrowedBooks)
+                foreach (Book borrowedBook
+                         in member.BorrowedBooks)
                 {
                     Book? originalBook =
-                        books.Find(b => b.Id == borrowedBook.Id);
+                        books.Find(
+                            b => b.Id == borrowedBook.Id);
 
                     if (originalBook != null)
                     {
