@@ -13,7 +13,20 @@ class Program
         {
             Console.WriteLine(item);
         }
+        Member member = new Member(1, "Abood");
+        li.AddMember(member);
 
+        li.BorrowBook(1, 1);
 
+        foreach (Book book in member.BorrowedBooks)
+        {
+            Console.WriteLine(book);
+        }
+        li.BorrowBook(1, 1);
+        li.ReturnBook(1, 1);
+        li.OnBookBorrowed += (book, member) =>
+        {
+            Console.WriteLine($"EVENT: {member.Name} borrowed {book.Title}");
+        };
     }
 }

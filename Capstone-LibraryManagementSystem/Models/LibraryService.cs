@@ -16,10 +16,6 @@ namespace Capstone_LibraryManagementSystem.Models
         {
             List<Book> results = new List<Book>();
 
-            if (results.Count == 0)
-            {
-                Console.WriteLine("Nothing found");
-            }
             foreach (Book book in books)
             {
                 if (book.Title.Contains(query, StringComparison.OrdinalIgnoreCase)||
@@ -29,6 +25,10 @@ namespace Capstone_LibraryManagementSystem.Models
                 }
                 
             }
+            if (results.Count == 0)
+            {
+                Console.WriteLine("Nothing found");
+            }
 
             return results;
         }
@@ -37,5 +37,65 @@ namespace Capstone_LibraryManagementSystem.Models
         {
             members.Add(member);
         }
+        public void BorrowBook(int bookId, int memberId)
+        {
+            Book book = books.Find(b => b.Id == bookId);
+            Member member = members.Find(m => m.Id == memberId);
+            if (book == null)
+            {
+                Console.WriteLine("Book not found");
+                return;
+            }
+            if (member == null)
+            {
+                Console.WriteLine("Member not found");
+                return;
+            }
+            if (book.IsBorrowed)
+            {
+                Console.WriteLine("Book is already borrowed");
+                return;
+            }
+            book.Borrow();
+            member.BorrowedBooks.Add(book);
+            OnBookBorrowed?.Invoke(book, member);
+
+            Console.WriteLine($"{member.Name} borrowed {book.Title}");  
+        }
+        public void ReturnBook(int bookId, int memberId)
+        {
+            Book book = books.Find(b => b.Id == bookId);
+            Member member = members.Find(m => m.Id == memberId);
+
+            if (book == null)
+            {
+                Console.WriteLine("Book not found");
+                return;
+            }
+
+            if (member == null)
+            {
+                Console.WriteLine("Member not found");
+                return;
+            }
+
+            if (!book.IsBorrowed)
+            {
+                Console.WriteLine("Book is not borrowed");
+                return;
+            }
+
+            if (!member.BorrowedBooks.Contains(book))
+            {
+                Console.WriteLine("This member did not borrow this book");
+                return;
+            }
+
+            book.Return();
+            member.BorrowedBooks.Remove(book);
+
+            Console.WriteLine($"{member.Name} returned {book.Title}");
+        }
+        public event Action<Book, Member>? OnBookBorrowed;
     }
 }
