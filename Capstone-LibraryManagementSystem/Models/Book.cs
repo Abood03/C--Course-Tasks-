@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
+    /// <summary>
+    /// Represents a book and manages its borrowing state.
+    /// </summary>
     public class Book:IBorrowable
     {
 
