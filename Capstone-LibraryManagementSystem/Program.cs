@@ -185,6 +185,7 @@ class Program
 
                         case "0":
                             await library.SaveDataAsync(filePath);
+                            Console.WriteLine("Data saved successfully");
                             running = false;
                             break;
 
@@ -203,9 +204,7 @@ class Program
                     Console.WriteLine(
                         $"File error: {ex.Message}");
                 }
-                await library.SaveDataAsync(filePath);
-
-                Console.WriteLine("Data saved successfully");
+                
             }
         }
         catch (LibraryException ex)
@@ -220,7 +219,7 @@ class Program
         {
             Console.WriteLine($"Unexpected error: {ex.Message}");
         }
-        ShowAuditMethods();
+        
     }
 
     static void AddInitialData(LibraryService library)
