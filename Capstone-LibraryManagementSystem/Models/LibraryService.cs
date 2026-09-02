@@ -8,12 +8,25 @@ using System.Threading.Tasks;
 
 namespace Capstone_LibraryManagementSystem.Models
 {
+    /// <summary>
+    /// Manages books, members, borrowing, searching, and data persistence.
+    /// </summary>
     public class LibraryService : ISearchable<Book>
     {
         private List<Book> books = new List<Book>();
         private List<Member> members = new List<Member>();
 
+        /// <summary>
+        /// Occurs after a member successfully borrows a book.
+        /// </summary>
         public event Action<Book, Member>? OnBookBorrowed;
+        /// <summary>
+        /// Adds a book to the library.
+        /// </summary>
+        /// <param name="book">The book to add.</param>
+        /// <exception cref="LibraryException">
+        /// Thrown when another book has the same identifier.
+        /// </exception>
         [AuditLog("Adds a new book")]
         public void AddBook(Book book)
         {
@@ -26,6 +39,13 @@ namespace Capstone_LibraryManagementSystem.Models
             books.Add(book);
         }
 
+        /// <summary>
+        /// Adds a member to the library.
+        /// </summary>
+        /// <param name="member">The member to add.</param>
+        /// <exception cref="LibraryException">
+        /// Thrown when another member has the same identifier.
+        /// </exception>
         [AuditLog("Adds a new member")]
         public void AddMember(Member member)
         {
@@ -38,6 +58,11 @@ namespace Capstone_LibraryManagementSystem.Models
             members.Add(member);
         }
 
+        /// <summary>
+        /// Searches for books by title or author.
+        /// </summary>
+        /// <param name="query">The search text.</param>
+        /// <returns>Books whose title or author contains the search text.</returns>
         [AuditLog("Searches for books")]
         public List<Book> Search(string query)
         {
@@ -59,6 +84,14 @@ namespace Capstone_LibraryManagementSystem.Models
             return results;
         }
 
+        /// <summary>
+        /// Lends an available book to a registered member.
+        /// </summary>
+        /// <param name="bookId">The identifier of the book.</param>
+        /// <param name="memberId">The identifier of the member.</param>
+        /// <exception cref="LibraryException">
+        /// Thrown when the book or member is missing, or the book is already borrowed.
+        /// </exception>
         [AuditLog("Borrows a book")]
         public void BorrowBook(int bookId, int memberId)
         {
@@ -90,6 +123,15 @@ namespace Capstone_LibraryManagementSystem.Models
                 $"{member.Name} borrowed {book.Title}");
         }
 
+        /// <summary>
+        /// Returns a book borrowed by a registered member.
+        /// </summary>
+        /// <param name="bookId">The identifier of the book.</param>
+        /// <param name="memberId">The identifier of the member.</param>
+        /// <exception cref="LibraryException">
+        /// Thrown when the book or member is missing, the book is available,
+        /// or the member did not borrow it.
+        /// </exception>
         [AuditLog("Returns a borrowed book")]
         public void ReturnBook(int bookId, int memberId)
         {
@@ -125,6 +167,11 @@ namespace Capstone_LibraryManagementSystem.Models
                 $"{member.Name} returned {book.Title}");
         }
 
+        /// <summary>
+        /// Saves all library data to a JSON file asynchronously.
+        /// </summary>
+        /// <param name="filePath">The destination JSON file path.</param>
+        /// <returns>A task representing the save operation.</returns>
         [AuditLog("Saves library data to JSON")]
         public async Task SaveDataAsync(string filePath)
         {
@@ -146,6 +193,14 @@ namespace Capstone_LibraryManagementSystem.Models
             await File.WriteAllTextAsync(filePath, json);
         }
 
+        /// <summary>
+        /// Loads library data from a JSON file asynchronously.
+        /// </summary>
+        /// <param name="filePath">The source JSON file path.</param>
+        /// <returns>A task representing the load operation.</returns>
+        /// <exception cref="LibraryException">
+        /// Thrown when the JSON data cannot be deserialized.
+        /// </exception>
         [AuditLog("Loads library data from JSON")]
         public async Task LoadDataAsync(string filePath)
         {

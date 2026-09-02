@@ -5,8 +5,16 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Provides the console entry point and user interface for the library system.
+/// </summary>
 class Program
 {
+    /// <summary>
+    /// Runs the interactive library menu.
+    /// </summary>
+    /// <param name="args">Command-line arguments.</param>
+    /// <returns>A task representing the application lifetime.</returns>
     static async Task Main(string[] args)
     {
         const string filePath = "libraryData.json";
@@ -222,6 +230,10 @@ class Program
         
     }
 
+    /// <summary>
+    /// Adds sample books and a member when no saved data exists.
+    /// </summary>
+    /// <param name="library">The library service to initialize.</param>
     static void AddInitialData(LibraryService library)
     {
         library.AddBook(new Book(1, "C#", "Abood"));
@@ -231,6 +243,9 @@ class Program
         Member member = new Member(1, "Abood");
         library.AddMember(member);
     }
+    /// <summary>
+    /// Displays operations decorated with the audit log attribute.
+    /// </summary>
     static void ShowAuditMethods()
     {
         Type serviceType = typeof(LibraryService);
