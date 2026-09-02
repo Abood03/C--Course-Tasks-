@@ -14,16 +14,27 @@ namespace Capstone_LibraryManagementSystem.Models
         private List<Member> members = new List<Member>();
 
         public event Action<Book, Member>? OnBookBorrowed;
-
         [AuditLog("Adds a new book")]
         public void AddBook(Book book)
         {
+            if (books.Exists(b => b.Id == book.Id))
+            {
+                throw new LibraryException(
+                    "A book with this ID already exists");
+            }
+
             books.Add(book);
         }
 
         [AuditLog("Adds a new member")]
         public void AddMember(Member member)
         {
+            if (members.Exists(m => m.Id == member.Id))
+            {
+                throw new LibraryException(
+                    "A member with this ID already exists");
+            }
+
             members.Add(member);
         }
 
